@@ -37,7 +37,7 @@ services:
     - DB_ADAPTER=postgresql
     - DB_HOST=postgresql
     - DB_PORT=5432
-    - DB_USER=gitlab
+    - DB_USER=pedrops
     - DB_PASS=pedrops
     - DB_NAME=gitlab
 
@@ -64,7 +64,7 @@ services:
     - GITLAB_NOTIFY_ON_BROKEN_BUILDS=true
     - GITLAB_NOTIFY_PUSHER=false
 
-    - GITLAB_EMAIL=pedrops.it@gmail.com
+    - GITLAB_EMAIL=it.pedrops@gmail.com
     - GITLAB_EMAIL_REPLY_TO=noreply@gmail.com
     - GITLAB_INCOMING_EMAIL_ADDRESS=reply@gmail.com
 
