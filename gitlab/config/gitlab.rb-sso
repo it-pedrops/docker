@@ -1,0 +1,15 @@
+gitlab_rails['ldap_enabled'] = true
+gitlab_rails['ldap_servers'] = {
+'main' => {
+  'label' => 'GitLab AD',
+  'host' =>  '192.168.0.17',
+  'port' => 389,
+  'uid' => 'sAMAccountName',
+  'encryption' => 'simple_tls',
+  'verify_certificates' => false,
+  'bind_dn' => 'CN=Administrator,CN=Users,DC=devops,DC=local',
+  'password' => 'XPTO',
+  'active_directory' => true,
+  'base' => 'OU=GitLab,DC=devops,DC=local'
+  }
+}
