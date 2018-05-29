@@ -1,0 +1,11 @@
+## Qual imagem vai ser usada
+FROM php-5.6-apache
+## instalando o mysql CLI para fazer a comunicação
+RUN apt-get update && apt-get install -y \
+    curl \
+    vim \
+    net-tools
+## Copiando os arquivos do diretorio loja para o /var/www/html
+COPY /store /var/www/html
+## Expor a porta 80
+EXPOSE 80
