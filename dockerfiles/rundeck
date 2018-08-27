@@ -1,6 +1,7 @@
+#
 FROM jordan/rundeck
 MAINTAINER "PedrOps <pedro.silva@skyone.solutions.com>"
-
+## Update your system operation and install importants tools before deploy
 RUN apt-get update && apt-get install -y \
     curl \
     vim \
@@ -15,4 +16,10 @@ RUN apt-get update && apt-get install -y \
     && pip install --upgrade awscli \
     && pip install boto3 \
     && pip install boto \
+    && pip install ansible \
     && apt-get clean
+## configure and install terraform
+RUN wget https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_amd64.zip \
+    && unzip terraform_0.11.8_linux_amd64.zip
+    && mv terraform /user/local/bin/
+    && rm -rf terraform_0.11.8_linux_amd64.zip
