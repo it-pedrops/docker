@@ -1,0 +1,17 @@
+FROM jordan/rundeck
+MAINTAINER "PedrOps <pedro.silva@skyone.solutions.com>"
+
+RUN apt-get update && apt-get install -y \
+    curl \
+    vim \
+    net-tools \
+    git \
+     python \
+        python-dev \
+        python-pip \
+        python-setuptools \
+        groff \
+        less \
+    && pip install --upgrade awscli \
+    && pip install boto3 \
+    && apt-get clean
